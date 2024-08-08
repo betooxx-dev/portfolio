@@ -17,18 +17,18 @@ const HeaderSection = () => {
         >
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-              Hello, I&apos;m{" "}
+              Hola, soy
             </span>
             <br></br>
             <TypeAnimation
               sequence={[
                 "Alberto Avendaño",
                 1000,
-                "Web Developer",
+                "Desarrollador Web",
                 1000,
-                "Mobile Developer",
+                "Desarrollador Móvil",
                 1000,
-                "UI/UX Designer",
+                "Hacker Ético",
                 1000,
               ]}
               wrapper="span"
@@ -36,23 +36,24 @@ const HeaderSection = () => {
               repeat={Infinity}
             />
           </h1>
+          {/* Descripción más carismática */}
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-          Hello! I hope you find what you're looking for.
+            ¡Bienvenido a mi mundo digital! Aquí encontrarás innovación, creatividad y soluciones tecnológicas que transforman ideas en realidad. ¿Listo para embarcarte en esta aventura tech?
           </p>
-          <div>
+          <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4">
             <Link
               href="/#contact"
-              className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
+              className="px-6 py-3 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white text-center"
             >
-              Hire Me
+              Contáctame
             </Link>
-            <div              
-              className="px-2 inline-block py-1 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
+            {/* Botón de Descargar CV más responsive */}
+            <button
+              className="px-6 py-3 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white"
+              onClick={() => window.open("/assets/cv.pdf")}
             >
-              <button className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2" onClick={() => window.open('/assets/cv.pdf')}>
-                Download CV
-              </button>
-            </div>
+              Descargar CV
+            </button>
           </div>
         </motion.div>
         <motion.div

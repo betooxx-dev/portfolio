@@ -13,15 +13,17 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "https://github.com/evilBetooxx/frontend-estudiaconfort.git",
     previewUrl: "https://main.d25eiycej117li.amplifyapp.com/",
+    technologies: ["React", "Node.js", "MongoDB", "AWS"]
   },
   {
     id: 2,
-    title: "Barhhaala",
+    title: "Barhalla",
     description: "Barhalla es una app web donde los usuarios puedes agendar citas en sus barberias favoritas, los barberos pueden administrar sus citas y los administradores pueden gestionar las barberias y los barberos.",
     image: "/images/projects/barhalla.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/evilBetooxx/barhalla.git",
     previewUrl: "/",
+    technologies: ["Vue.js", "Express", "PostgreSQL"]
   }
 ];
 
@@ -46,7 +48,7 @@ const ProjectsSection = () => {
   return (
     <section id="projects">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
-        My Projects
+        Mis Proyectos
       </h2>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
@@ -66,24 +68,31 @@ const ProjectsSection = () => {
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-2 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
-          >
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
-            />
-          </motion.li>
-        ))}
+        {filteredProjects.length > 0 ? (
+          filteredProjects.map((project, index) => (
+            <motion.li
+              key={index}
+              variants={cardVariants}
+              initial="initial"
+              animate={isInView ? "animate" : "initial"}
+              transition={{ duration: 0.3, delay: index * 0.4 }}
+            >
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                imgUrl={project.image}
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
+                technologies={project.technologies}
+              />
+            </motion.li>
+          ))
+        ) : (
+          <p className="text-center text-white col-span-2">
+            Estoy trabajando en una nueva aplicación emocionante. ¡Vuelve pronto para ver las novedades!
+          </p>
+        )}
       </ul>
     </section>
   );
