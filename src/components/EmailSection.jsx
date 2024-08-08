@@ -25,7 +25,7 @@ const EmailSection = () => {
     })
 
     if (response.status === 200) {
-      console.log("Message sent.");
+      console.log("Mensaje enviado.");
       setEmailSubmitted(true);
     } else {
       console.log(error);
@@ -36,35 +36,31 @@ const EmailSection = () => {
     <section>
       <div>
         <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12 relative my-12 md:my-12">
-          Contact Me
+          Contáctame
         </h2>
       </div>
       <div
         id="contact"
         className="grid md:grid-cols-2 my-10 md:my-10 py-24 gap-4 relative"
       >
-        <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
         <div className="z-10">
-          <h5 className="text-xl font-bold text-white my-2">Let's Connect</h5>
+          <h5 className="text-xl font-bold text-white my-2">Vamos a Conectarnos</h5>
           <p className="text-[#ADB7BE] mb-4 max-w-md">
-            {" "}
-            I'm currently looking for new opportunities, my inbox is always
-            open. Whether you have a question or just want to say hi, I'll try
-            my best to get back to you!
+            Me complace saber que está interesado en comunicarse conmigo. Mi bandeja de entrada está siempre abierta y me esforzaré por responder a cualquier consulta o comentario que tenga, ya sea una pregunta formal o simplemente un saludo. No dude en ponerse en contacto.
           </p>
           <div className="socials flex flex-row gap-2">
             <Link href="https://github.com/evilBetooxx">
-              <Image src={GithubIcon} alt="Github Icon" />
+              <Image src={GithubIcon} alt="Icono de Github" />
             </Link>
             <Link href="https://www.linkedin.com/in/alberto-avenda%C3%B1o-2370aa282/">
-              <Image src={LinkedinIcon} alt="Linkedin Icon" />
+              <Image src={LinkedinIcon} alt="Icono de Linkedin" />
             </Link>
           </div>
         </div>
         <div>
           {emailSubmitted ? (
             <p className="text-green-500 text-sm mt-2">
-              Email sent successfully!
+              ¡Mensaje enviado exitosamente!
             </p>
           ) : (
             <form className="flex flex-col" onSubmit={handleSubmit}>
@@ -73,7 +69,7 @@ const EmailSection = () => {
                   htmlFor="email"
                   className="text-white block mb-2 text-sm font-medium"
                 >
-                  Your email
+                  Su correo electrónico
                 </label>
                 <input
                   name="email"
@@ -89,7 +85,7 @@ const EmailSection = () => {
                   htmlFor="subject"
                   className="text-white block text-sm mb-2 font-medium"
                 >
-                  Subject
+                  Asunto
                 </label>
                 <input
                   name="subject"
@@ -97,7 +93,7 @@ const EmailSection = () => {
                   id="subject"
                   required
                   className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                  placeholder="Just saying hi"
+                  placeholder="Consulta sobre el proyecto"
                 />
               </div>
               <div className="mb-6">
@@ -105,20 +101,20 @@ const EmailSection = () => {
                   htmlFor="message"
                   className="text-white block text-sm mb-2 font-medium"
                 >
-                  Message
+                  Mensaje
                 </label>
                 <textarea
                   name="message"
                   id="message"
                   className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                  placeholder="Let's talk about..."
+                  placeholder="Compártame sus comentarios o solicitudes..."
                 />
               </div>
               <button
                 type="submit"
                 className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
               >
-                Send Message
+                Enviar Mensaje
               </button>
             </form>
           )}
